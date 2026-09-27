@@ -1,0 +1,26 @@
+# Android / Gradle
+.gradle/
+**/build/
+local.properties
+.idea/
+*.iml
+*.apk
+*.aab
+
+# Credentials and signing
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+*.jks
+*.keystore
+*service-account*.json
+google-services.json
+
+# Worker tooling
+node_modules/
+.wrangler/
+
+# OS
+.DS_Store
