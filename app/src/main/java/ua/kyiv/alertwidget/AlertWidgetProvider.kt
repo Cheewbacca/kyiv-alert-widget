@@ -22,8 +22,20 @@ class AlertWidgetProvider : AppWidgetProvider() {
     }
 
     override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action == ACTION_REFRESH) {
+            val appContext = context.applicationContext
+            WidgetRenderer.showRefreshing(appContext)
+            val pendingResult = goAsync()
+            Thread({
+                try {
+                    AlertRepository.refresh(appContext, manual = true)
+                } finally {
+                    pendingResult.finish()
+                }
+            }, "kyiv-alert-manual-refresh").start()
+            return
+        }
         super.onReceive(context, intent)
-        if (intent.action == ACTION_REFRESH) RefreshScheduler.refreshNow(context)
     }
 
     companion object {
