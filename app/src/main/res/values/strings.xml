@@ -6,6 +6,8 @@
     <string name="tap_to_refresh">Торкніться, щоб оновити</string>
     <string name="checked_at">Перевірено о %1$s</string>
     <string name="stale_at">Дані застаріли · %1$s</string>
+    <string name="refresh_failed">Не вдалося оновити · торкніться ще раз</string>
+    <string name="refresh_failed_at">Помилка · останнє %1$s</string>
     <string name="no_data">Дані недоступні</string>
     <string name="clear">● Тривоги немає</string>
     <string name="yellow">● Жовтий рівень</string>
