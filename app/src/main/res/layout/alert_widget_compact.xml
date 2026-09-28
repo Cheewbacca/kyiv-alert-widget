@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/compact_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/compact_widget_description">
+
+    <ImageView
+        android:id="@+id/compact_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/widget_tile_unknown" />
+
+    <LinearLayout
+        android:id="@+id/compact_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <ImageView
+            android:id="@+id/compact_shield"
+            android:layout_width="26dp"
+            android:layout_height="28dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_shield_light" />
+
+        <TextView
+            android:id="@+id/compact_checked_at"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/time_unavailable"
+            android:textColor="@color/on_alert_light"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/compact_refresh_indicator"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_refresh_light"
+        android:visibility="gone" />
+</FrameLayout>

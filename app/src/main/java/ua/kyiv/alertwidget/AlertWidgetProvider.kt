@@ -5,7 +5,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 
-class AlertWidgetProvider : AppWidgetProvider() {
+open class AlertWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(context: Context, manager: AppWidgetManager, appWidgetIds: IntArray) {
         WidgetRenderer.renderAll(context)
         RefreshScheduler.ensurePeriodic(context)
@@ -18,7 +18,7 @@ class AlertWidgetProvider : AppWidgetProvider() {
     }
 
     override fun onDisabled(context: Context) {
-        RefreshScheduler.stopPeriodic(context)
+        if (!WidgetRenderer.hasWidgets(context)) RefreshScheduler.stopPeriodic(context)
     }
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -28,7 +28,7 @@ class AlertWidgetProvider : AppWidgetProvider() {
             val pendingResult = goAsync()
             Thread({
                 try {
-                    AlertRepository.refresh(appContext, manual = true)
+                    AlertRepository.refresh(appContext)
                 } finally {
                     pendingResult.finish()
                 }
@@ -42,3 +42,5 @@ class AlertWidgetProvider : AppWidgetProvider() {
         const val ACTION_REFRESH = "ua.kyiv.alertwidget.REFRESH"
     }
 }
+
+class CompactAlertWidgetProvider : AlertWidgetProvider()

@@ -14,7 +14,7 @@ object AlertRepository {
 
     private const val ENDPOINT = "https://kyiv.digital/open-api/air-alert/state"
 
-    fun refresh(context: Context, manual: Boolean = false): Boolean {
+    fun refresh(context: Context): Boolean {
         var connection: HttpURLConnection? = null
         var status: AlertStatus? = null
         try {
@@ -40,13 +40,17 @@ object AlertRepository {
 
         val editor = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit()
             .putBoolean(KEY_LAST_ATTEMPT_FAILED, status == null)
-        if (manual) editor.remove(KEY_REFRESHING_AT)
+            .remove(KEY_REFRESHING_AT)
         if (status != null) {
+            val checkedAt = System.currentTimeMillis()
             editor.putString(KEY_STATUS, status.name)
-                .putLong(KEY_CHECKED_AT, System.currentTimeMillis())
+                .putLong(KEY_CHECKED_AT, checkedAt)
         }
         editor.apply()
         WidgetRenderer.renderAll(context)
+        if (status != null && WidgetRenderer.hasWidgets(context)) {
+            RefreshScheduler.scheduleFreshnessCheck(context)
+        }
         return status != null
     }
 }

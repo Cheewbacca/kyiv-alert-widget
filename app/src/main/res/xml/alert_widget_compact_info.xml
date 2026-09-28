@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="56dp"
+    android:minHeight="50dp"
+    android:targetCellWidth="1"
+    android:targetCellHeight="1"
+    android:initialLayout="@layout/alert_widget_compact"
+    android:previewLayout="@layout/alert_widget_compact"
+    android:description="@string/compact_widget_description"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />

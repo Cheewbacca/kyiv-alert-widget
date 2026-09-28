@@ -1,0 +1,13 @@
+<resources>
+    <color name="shield_navy">#33485A</color>
+    <color name="shield_cream">#F6E9D7</color>
+    <color name="widget_surface">#F7F1E8</color>
+    <color name="widget_text">#292735</color>
+    <color name="widget_text_secondary">#68626A</color>
+    <color name="alert_red">#C8464E</color>
+    <color name="alert_yellow">#F1C254</color>
+    <color name="alert_green">#318C68</color>
+    <color name="alert_unknown">#747B89</color>
+    <color name="on_alert_light">#FFFAF4</color>
+    <color name="on_alert_yellow">#332B28</color>
+</resources>

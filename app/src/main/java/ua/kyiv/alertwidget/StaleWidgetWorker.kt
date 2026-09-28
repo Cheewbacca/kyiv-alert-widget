@@ -3,10 +3,10 @@ package ua.kyiv.alertwidget
 import android.content.Context
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-class RefreshWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
+
+class StaleWidgetWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
     override fun doWork(): Result {
-        WidgetRenderer.showRefreshing(applicationContext)
-        AlertRepository.refresh(applicationContext)
+        WidgetRenderer.renderAll(applicationContext)
         return Result.success()
     }
 }

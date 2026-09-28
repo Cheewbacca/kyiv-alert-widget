@@ -1,16 +1,24 @@
 <resources>
     <string name="app_name">Київ · Тривога</string>
-    <string name="widget_description">Поточний стан повітряної тривоги в Києві</string>
-    <string name="city">Київ · повітряна тривога</string>
-    <string name="loading">Перевіряємо…</string>
+    <string name="widget_description">Великий віджет стану тривоги в Києві</string>
+    <string name="compact_widget_description">Компактний віджет стану тривоги в Києві</string>
+    <string name="city">Київ</string>
+    <string name="loading">Перевіряємо</string>
     <string name="tap_to_refresh">Торкніться, щоб оновити</string>
-    <string name="checked_at">Перевірено о %1$s</string>
-    <string name="stale_at">Дані застаріли · %1$s</string>
-    <string name="refresh_failed">Не вдалося оновити · торкніться ще раз</string>
-    <string name="refresh_failed_at">Помилка · останнє %1$s</string>
-    <string name="no_data">Дані недоступні</string>
-    <string name="clear">● Тривоги немає</string>
-    <string name="yellow">● Жовтий рівень</string>
-    <string name="red">● Червоний рівень</string>
-    <string name="unknown">● Тривога: рівень невідомий</string>
+    <string name="checked_at">%1$s</string>
+    <string name="updating_at">Оновлюємо · %1$s</string>
+    <string name="stale_at">Застаріло · %1$s</string>
+    <string name="refresh_failed">Помилка оновлення</string>
+    <string name="refresh_failed_at">Помилка · %1$s</string>
+    <string name="time_unavailable">—:—</string>
+    <string name="no_data">Немає даних</string>
+    <string name="clear">Відбій</string>
+    <string name="yellow">Жовтий рівень</string>
+    <string name="red">Тривога</string>
+    <string name="unknown">Тривога</string>
+    <string name="unknown_description">Тривога: тип загрози невідомий</string>
+    <string name="accessibility_verified">%1$s. Перевірено о %2$s.</string>
+    <string name="accessibility_refreshing">Оновлюємо. %1$s</string>
+    <string name="accessibility_failed">Не вдалося оновити. %1$s</string>
+    <string name="accessibility_stale">Дані застаріли. %1$s</string>
 </resources>
