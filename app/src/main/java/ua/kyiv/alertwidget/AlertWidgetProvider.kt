@@ -28,7 +28,7 @@ open class AlertWidgetProvider : AppWidgetProvider() {
             val pendingResult = goAsync()
             Thread({
                 try {
-                    AlertRepository.refresh(appContext)
+                    AlertRepository.refresh(appContext, RequestSource.MANUAL)
                 } finally {
                     pendingResult.finish()
                 }
